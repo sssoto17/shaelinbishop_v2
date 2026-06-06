@@ -13,6 +13,8 @@ const nextConfig = {
     ]
   },
   images: {
+    loader: 'custom',
+    loaderFile: './src/lib/loader.js',
     dangerouslyAllowLocalIP: process.env.APP_MODE === "dev",
     remotePatterns: [
       {
