@@ -1,0 +1,3 @@
+legacyPeerDeps: true
+allowBuilds:
+  sharp: true

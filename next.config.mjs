@@ -13,6 +13,8 @@ const nextConfig = {
     ]
   },
   images: {
+    loader: 'custom',
+    loaderFile: './src/lib/loader.js',
     remotePatterns: [
       {
         protocol: 'http',
@@ -21,12 +23,16 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'author-shaelin-bishop.vercel.app',
+        hostname: 'www.author-shaelin-bishop.vercel.app',
       },
       {
         protocol: 'https',
         hostname: 'shaelinbishop.vercel.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'tvokjt9s5bkmgsfn.public.blob.vercel-storage.com',
+      }
     ],
   },
 }
