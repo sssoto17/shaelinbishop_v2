@@ -20,7 +20,7 @@ function RenderContent({ sections: content }) {
     if (section.blockType === 'accordion') return <Accordion key={id} {...section} />
     if (section.blockType === 'editorPromo') return <EditorPromo key={id} {...section} />
     if (section.blockType === 'form') return <Contact key={id} {...section} />
-    // if (section.blockType === 'featuredContent') return <Featured key={id} {...section} />
+    if (section.blockType === 'featuredContent') return <Featured key={id} {...section} />
     if (section.blockType === 'listBlock') return <ListBlock key={id} {...section} />
     if (section.blockType === 'mediaBlock') return <MediaBlock key={id} {...section} />
     if (section.blockType === 'mediaWTitle') return <MediaWithTitle key={id} {...section} />
