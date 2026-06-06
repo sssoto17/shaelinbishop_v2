@@ -13,6 +13,7 @@ const nextConfig = {
     ]
   },
   images: {
+    dangerouslyAllowLocalIP: process.env.APP_MODE === "dev",
     remotePatterns: [
       {
         protocol: 'http',

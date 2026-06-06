@@ -1,9 +1,10 @@
 import { headers as getHeaders, draftMode } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { payload } from '@/lib/utils'
+import { NextRequest } from 'next/server'
 
 export async function GET(
-  req: { cookies: { get: (name: string) => { value: string } } } & Request,
+  req: NextRequest,
 ): Promise<Response> {
   const draft = await draftMode()
   const headers = await getHeaders()

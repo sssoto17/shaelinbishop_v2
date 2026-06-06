@@ -1,6 +1,8 @@
 import Image from 'next/image'
 
 export default function ParallaxBG({ url, alt, isPriority, fullBleed, className, as, children }) {
+
+  console.log(url)
   if (as === 'article')
     return (
       <article
