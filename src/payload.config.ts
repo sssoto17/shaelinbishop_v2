@@ -38,7 +38,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
     autoLogin:
-      process.env.NODE_ENV !== "development"
+      process.env.NODE_ENV === "development"
         ? {
             email: 'saso0001@stud.ek.dk',
           }
