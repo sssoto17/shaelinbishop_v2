@@ -10,8 +10,6 @@ export default async function Hero({ type, content }) {
   // const heroImg = `url(${content?.image?.url})`
   // const { url, alt } = content?.image
 
-  console.log(content?.image)
-
   if (type !== 'none')
     return (
       <ParallaxBG

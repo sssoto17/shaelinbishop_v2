@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function ParallaxBG({ url, sizes, alt, isPriority, fullBleed, className, as, children }) {
+export default function ParallaxBG({ url, alt, isPriority, fullBleed, className, as, children }) {
 
   // console.log(url)
   if (as === 'article')
@@ -11,7 +11,7 @@ export default function ParallaxBG({ url, sizes, alt, isPriority, fullBleed, cla
       >
         <div className="fixed inset-0 -z-10 col-span-full">
           <Image
-            src={sizes.screen.url}
+            src={url}
             alt={alt}
             priority={!!isPriority}
             fill

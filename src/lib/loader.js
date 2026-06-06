@@ -1,16 +1,28 @@
 "use client";
 
+const payloadUrl = process.env.NEXT_PUBLIC_PAYLOAD_URL;
+
 export default function imageLoader({ src, width, quality }) {
-    const url = new URL(src);
-    let directPath = url.pathname;
+    const source = new URL(src, payloadUrl || 'http://localhost:3000');
+    const payloadOrigin = payloadUrl ? new URL(payloadUrl).origin : source.origin
+
+    let pathname = source.pathname
     
     
-    if (url.pathname.startsWith('/api/media/file')) {
-        let path = url.pathname.split('file');
-        directPath = `media${path[1]}`;
+    if (pathname.startsWith('/api/media/file')) {
+        pathname = pathname.replace('/api/media/file', '/media')
+        // let path = url.pathname.split('file');
+        // directPath = `media${path[1]}`;
     }
+
+    const isLocalHost =
+    source.hostname === 'localhost' ||
+    source.hostname === '127.0.0.1' ||
+    source.hostname === '::1'
     
-    const test = `${url.protocol}//${url.host}${directPath}?w=${width}&q=${quality || 75}`;
+    const origin = isLocalHost && payloadUrl ? new URL(payloadUrl).origin : source.origin
+    const test = `${origin}${pathname}?w=${width}&q=${quality || 75}`
+    // const test = `${url.protocol}//${url.host}${directPath}?w=${width}&q=${quality || 75}`;
 
     // console.log("HOST:", url.host)
     // console.log("HOST:", process.env.NEXT_PUBLIC_PAYLOAD_URL)
