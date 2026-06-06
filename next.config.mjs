@@ -15,7 +15,7 @@ const nextConfig = {
   images: {
     loader: 'custom',
     loaderFile: './src/lib/loader.js',
-    dangerouslyAllowLocalIP: process.env.APP_MODE === "dev",
+    dangerouslyAllowLocalIP: process.env.NODE_ENV === "development",
     remotePatterns: [
       {
         protocol: 'http',
