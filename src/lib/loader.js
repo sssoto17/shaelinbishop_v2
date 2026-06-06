@@ -9,5 +9,10 @@ export default function imageLoader({ src, width, quality }) {
         directPath = `media${path[1]}`;
     }
     
-    return `${url.protocol}//${url.host}/${directPath}?w=${width}&q=${quality || 75}`;
+    const test = `${url.protocol}//${url.host}${directPath}?w=${width}&q=${quality || 75}`;
+
+    // console.log("HOST:", url.host)
+    // console.log("IMG:", test)
+
+    return test
 }
